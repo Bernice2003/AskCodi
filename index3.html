@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Recommendations</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+  }
+  nav {
+    text-align: center;
+    margin-top: 20px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #007bff;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Travel Recommendations</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#product">Product</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <section id="home">
+    <h2>Welcome to Travel Recommendations</h2>
+    <p>Explore exciting destinations tailored for young women making above $160,000 yearly.</p>
+  </section>
+
+  <section id="product">
+    <h2>Featured Destinations</h2>
+    <div class="destination">
+      <img src="destination1.jpg" alt="Destination 1">
+      <h3>Destination 1</h3>
+      <p>Description of Destination 1.</p>
+    </div>
+    <div class="destination">
+      <img src="destination2.jpg" alt="Destination 2">
+      <h3>Destination 2</h3>
+      <p>Description of Destination 2.</p>
+    </div>
+    <!-- Add more destinations as needed -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" required></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2024 Travel Recommendations. All rights reserved.</p>
+</footer>
+
+<script>
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const sectionId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(sectionId);
+
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Form submission handling
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Here you can handle form submission, such as sending the data to a server
+    // For demonstration purposes, we'll just log the form data
+    console.log('Form submitted:');
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Message:', message);
+
+    // Clear the form after submission
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
